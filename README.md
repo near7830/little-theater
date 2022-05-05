@@ -14,49 +14,74 @@
 
 ### Association
 
-- has_many :main_rooms
+- has_many :user_mainrooms
+- has_many :user_staffrooms
+- has_many :staff_rooms, through: :user_staffrooms
+- has_many :mainrooms, through: :user_mainrooms
+- has_many :messages
+
+## mainrooms テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- has_many :user_mainrooms
 - has_many :staff_rooms
-- has_many :rooms, through: :room_users
+- has_many :users, through: :main_rooms
 - has_many :messages
 
-## main_rooms テーブル
+## user_mainrooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| mainroom  | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :room_users
-- has_many :users, through: :room_users
-- has_many :messages
-
-## staff_rooms テーブル
-
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-
-- has_many :room_users
-- has_many :users, through: :room_users
-- has_many :messages
-
-### Association
-
-- belongs_to :room
 - belongs_to :user
+- nelongs_to :mainroom
+
+
+## staffrooms テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- belongs_to :main_room
+- has_many :user_staffrooms
+- has_many :users, through: :user_staffrooms
+- has_many :messages
+
+## user_staffrooms テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| staffroom  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- nelongs_to :staffroom
 
 ## messages テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | text       |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| -------      | ---------- | ------------------------------ |
+| content      | text       |                                |
+| user         | references | null: false, foreign_key: true |
+| main_room    | references | null: false, foreign_key: true |
+| staff_room   | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :room
 - belongs_to :user
+- belongs_to :mainroom
+- berongs_to :staffroom
