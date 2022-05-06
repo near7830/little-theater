@@ -7,5 +7,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :category, presence: true
   validates :password,
-            format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }, on: :create
+            format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }, on: :creat
+
+  has_many :user_mainrooms
+  has_many :mainrooms, through: :user_mainrooms
 end
