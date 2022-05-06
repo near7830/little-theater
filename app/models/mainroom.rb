@@ -1,0 +1,2 @@
+class Mainroom < ApplicationRecord
+end
