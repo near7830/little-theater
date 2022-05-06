@@ -1,4 +1,8 @@
 class MainroomsController < ApplicationController
+  
+  def index
+  end
+
   def new
     @mainroom = Mainroom.new
   end
