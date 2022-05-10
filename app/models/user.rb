@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   has_many :user_mainrooms
   has_many :mainrooms, through: :user_mainrooms
+  has_many :messages
 end

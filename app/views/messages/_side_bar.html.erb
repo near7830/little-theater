@@ -11,8 +11,7 @@
   <% current_user.mainrooms.each do |mainroom| %>
     <div class="room">
       <div class="room-name">
-      <a href="#"><%= mainroom.name %></a>
-        <%#= link_to '#', root_path %>
+       <%= link_to mainroom.name, mainroom_messages_path(mainroom) %>
       </div>
     </div>
   <% end %>
