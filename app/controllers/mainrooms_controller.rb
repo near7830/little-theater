@@ -1,5 +1,4 @@
 class MainroomsController < ApplicationController
-  
   def index
   end
 
@@ -21,5 +20,4 @@ class MainroomsController < ApplicationController
   def mainroom_params
     params.require(:mainroom).permit(:name, user_ids: [])
   end
-
 end

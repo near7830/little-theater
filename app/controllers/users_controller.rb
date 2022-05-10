@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :set_user, only: :show
 
   def index
@@ -27,8 +26,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    #user_path(@user.id)
-    #@user = User.find([:id])
+    # user_path(@user.id)
+    # @user = User.find([:id])
   end
-
 end
