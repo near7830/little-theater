@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_06_031257) do
+ActiveRecord::Schema.define(version: 2022_05_10_052120) do
 
   create_table "mainrooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "mainroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mainroom_id"], name: "index_messages_on_mainroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "user_mainrooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -43,6 +53,8 @@ ActiveRecord::Schema.define(version: 2022_05_06_031257) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "mainrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "user_mainrooms", "mainrooms"
   add_foreign_key "user_mainrooms", "users"
 end
