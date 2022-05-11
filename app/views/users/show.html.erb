@@ -1,1 +1,24 @@
 <h1><%= @user.nickname %>のユーザーページ</h1>
+<div class="main">
+  <div class="inner">
+   <div class='account-page__inner--left account-page__header'>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
+      <%= link_to "編集", edit_user_path(current_user)%>
+    </div>
+    <div class="user__wrapper">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">役職</th>
+            <td class="table__col2"><%= @user.category %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
