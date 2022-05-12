@@ -45,30 +45,31 @@
 - nelongs_to :mainroom
 
 
-## staffrooms テーブル
+## events テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column     | Type     | Options     |
+| ---------- | ------   | ----------- |
+| title      | string   |             |
+| cotent     | text     |             |
+| strat_time | datetime |             |
 
 ### Association
 
 - belongs_to :main_room
-- has_many :user_staffrooms
-- has_many :users, through: :user_staffrooms
-- has_many :messages
+- has_many :users
+- has_many :users, through: :user_events
 
-## user_staffrooms テーブル
+## user_events テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |
-| staffroom  | references | null: false, foreign_key: true |
+| event     | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- nelongs_to :staffroom
+- belongs_to :event
 
 ## messages テーブル
 
