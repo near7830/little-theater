@@ -1,4 +1,12 @@
-<%= link_to 'イベント追加', new_event_path %>
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      <%= @mainroom.name %>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'イベント追加', new_mainroom_event_path %>
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>

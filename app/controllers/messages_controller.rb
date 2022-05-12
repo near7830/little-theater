@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     @mainroom = Mainroom.find(params[:mainroom_id])
     @messages = @mainroom.messages.includes(:user)
     @events = Event.all
+    @events = Mainroom.find(params[:mainroom_id]).events
   end
 
   def create

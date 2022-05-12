@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   resources :mainrooms, only: [:new, :create] do
     resources :messages, only: [:index, :create]
+    resources :events, only: [:index, :new, :create]
   end
-  resources :events, only: [:index, :new, :create]
 end
