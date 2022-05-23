@@ -1,87 +1,43 @@
-# テーブル設計
+# アプリケーション名
+little-theater
 
-## users テーブル
+# アプリケーション概要
+演劇に関するスケジュールの共有が出来る。
 
-| Column             | Type    | Options     |
-| ------------------ | ------  | ----------- |
-| nickname           | string  | null: false |
-| email              | string  | null: false |
-| encrypted_password | string  | null: false |
-| category_id        | string  | null: false |
-| sub_category_id    | string  |             |
-| belongs            | string  |             |
+# URL
+https://little-theater.herokuapp.com/
 
-### Association
+# テスト用アカウント
+・Basic認証パスワード：37760  
+・Basic認証ID：horai  
+・メールアドレス：test@mail.com  
+・パスワード：a12345
 
-- has_many :user_mainrooms
-- has_many :user_staffrooms
-- has_many :staff_rooms, through: :user_staffrooms
-- has_many :mainrooms, through: :user_mainrooms
-- has_many :messages
+# 利用方法
+## スケジュール投稿
+1.サインアップ画面でユーザーを新規登録する  
+2.公演作成ボタンから公演の名前とスケジュールを共有するユーザーを選ぶ  
+3.イベント追加ボタンから日の選択とスケジュールの内容を記述して投稿する
 
-## mainrooms テーブル
+# アプリケーションを作成した背景
+演劇に関するスケジュールの共有が上手くいっていないことをよく見てきたので、専用のアプリとして作り他のスケジュールとは別のものとしてあれば、共有がしやすく管理しやすいものになると考えたからです。
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-
-- has_many :user_mainrooms
-- has_many :staff_rooms
-- has_many :users, through: :main_rooms
-- has_many :messages
-
-## user_mainrooms テーブル
-
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| mainroom  | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- nelongs_to :mainroom
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1zFMsymJH552brk4Sn39tjtuDqku8k2n-f73rZmxozoA/edit?usp=sharing
+# 実装した機能についての画像
+[![Image from Gyazo](https://i.gyazo.com/c4c1d11861474bac97bd817c664d30cd.png)](https://gyazo.com/c4c1d11861474bac97bd817c664d30cd)
 
 
-## events テーブル
+# 実装予定の機能
+・現状１対１のユーザーから複数人が共有出来る機能  
+・投稿したスケジュールの詳細、編集機能
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/51bec80dfa3cebd45c406fd3192161c8.png)](https://gyazo.com/51bec80dfa3cebd45c406fd3192161c8)
+# 画面遷移図
 
-| Column     | Type     | Options     |
-| ---------- | ------   | ----------- |
-| title      | string   |             |
-| cotent     | text     |             |
-| strat_time | datetime |             |
-
-### Association
-
-- belongs_to :main_room
-- has_many :users
-- has_many :users, through: :user_events
-
-## user_events テーブル
-
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| event     | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :event
-
-## messages テーブル
-
-| Column       | Type       | Options                        |
-| -------      | ---------- | ------------------------------ |
-| content      | text       |                                |
-| user         | references | null: false, foreign_key: true |
-| main_room    | references | null: false, foreign_key: true |
-| staff_room   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :mainroom
-- berongs_to :staffroom
+# 環境開発
+バックエンド
+# ローカルでの動作方法
+# 工夫したポイント
+作成した公演チャット毎にカレンダーを別で表示することです。  
+一番重要な部分なのでテーブル毎に別々のカレンダーを日本語表記で表示させ、追加されたイベントもテーブル毎に別々で表示されるようにしました。
