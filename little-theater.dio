@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="gqW31JSFJXKYJe07ppGX" name="ページ1">
-        <mxGraphModel dx="721" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="848" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -96,6 +96,43 @@
                         <Array as="points">
                             <mxPoint x="30" y="560"/>
                         </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startSize=25;endSize=25;targetPerimeterSpacing=-1;endArrow=none;endFill=0;" edge="1" parent="1" source="24" target="25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="新規ユーザー登録ページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="1000" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startSize=25;endSize=25;targetPerimeterSpacing=-1;" edge="1" parent="1" source="25" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="メインページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="293" y="1000" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="マイページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="1000" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startSize=25;endSize=25;targetPerimeterSpacing=-1;" edge="1" parent="1" source="27">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="1125.8823529411766" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="イベント追加ページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="1096" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startSize=25;endSize=25;targetPerimeterSpacing=-1;" edge="1" parent="1" source="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="1220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="新規公演ルーム作成ページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="1190" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="endArrow=none;html=1;startSize=25;endSize=25;targetPerimeterSpacing=-1;elbow=vertical;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="350" y="1220" as="sourcePoint"/>
+                        <mxPoint x="350" y="1060" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
