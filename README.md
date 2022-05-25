@@ -8,7 +8,7 @@ little-theater
 https://little-theater.herokuapp.com/
 
 # テスト用アカウント
-・Basic認証ユーザー名：horai 
+・Basic認証ユーザー名：horai  
 ・Basic認証パスワード：37760   
 ・メールアドレス：test@mail.com  
 ・パスワード：a12345
